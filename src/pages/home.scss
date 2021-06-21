@@ -130,10 +130,15 @@
       flex-direction: column;
     }
 
-    .战果 {
+    .战果, .作案手段 {
+      padding: 0 px(24);
+
       > table {
-        margin-top: px(38);
+        border:1px solid red;
+        margin-top: px(25);
         border-collapse: collapse;
+        width: 100%;
+        table-layout: fixed;
 
         th, td {
           border: 1px solid #1a3671;
@@ -299,6 +304,14 @@
           font-size: px(20);
           color: #7ab6db;
           margin-top: px(6)
+        }
+      }
+    }
+
+    .作案手段 {
+      > table {
+        tbody {
+          td{height:px(26)}
         }
       }
     }
