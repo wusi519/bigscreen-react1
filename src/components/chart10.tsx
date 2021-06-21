@@ -37,7 +37,7 @@ export const Chart10 = () => {
       series: [{
         data: [40,22,20,18,32],
         type: 'bar',
-        color:new echarts.graphic.LinearGradient(0,0,1,0,[{
+        color:new echarts.graphic.LinearGradient(0,0,0,1,[{
           offset:0,
           color:'#0a97fb'
         },{
