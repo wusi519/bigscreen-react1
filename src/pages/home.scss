@@ -124,17 +124,29 @@
       height: px(363);
     }
 
-    .chart12 {
+    .chart11, .chart12 {
       flex: 1;
       display: flex;
       flex-direction: column;
+
+      > .chart {
+        display: flex;
+
+        > .main {
+          flex: 1
+        }
+      }
+
+      .legend {
+        @extend %legend
+      }
     }
 
     .战果, .作案手段 {
       padding: 0 px(24);
 
       > table {
-        border:1px solid red;
+        border: 1px solid red;
         margin-top: px(25);
         border-collapse: collapse;
         width: 100%;
@@ -264,7 +276,7 @@
 
       &-图1, &-图2, {
         .legend {
-          @extend %legend
+          @extend %legend;
         }
 
         .chart {
@@ -311,7 +323,9 @@
     .作案手段 {
       > table {
         tbody {
-          td{height:px(26)}
+          td {
+            height: px(26)
+          }
         }
       }
     }

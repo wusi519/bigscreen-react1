@@ -3,11 +3,8 @@ import * as echarts from 'echarts';
 import {createEchartsOptions} from '../shared/create-echarts-options';
 import {px} from '../shared/px';
 
-type Data={
-  value:number,
-  name:string
-}
 export const Chart12 = () => {
+  const colors = ['#F46064', '#F38E1C', '#1CDB7C', '#8D70F8', '#33A4FA'];
   const divRef = useRef(null);
   const data = [
     {value: 0.08, name: '东岗路'},
@@ -17,22 +14,20 @@ export const Chart12 = () => {
     {value: 0.12, name: '中山路'},
     {value: 0.06, name: '庆阳路'},
     {value: 0.08, name: '武都路'},
-    {value: 0.08, name: '酒泉路'},
-    {value: 0.08, name: '天水路'},
   ];
   useEffect(() => {
     var myChart = echarts.init(divRef.current);
     myChart.setOption(createEchartsOptions({
       xAxis: {show: false},
       yAxis: {show: false},
-      grid: {x: 0, x2: 0, y: 0, y2: 0, containLabel: true},
+      grid: {x: '5%', x2:'5%', y: '1%', y2: '2%', containLabel: true},
       legend: {
         orient: 'vertical',
         left: 'left',
         top: 'center',
         textStyle: {color: 'white'},
-        itemWidth: px(10),
-        itemHeight: px(10),
+        itemWidth: 20,
+        itemHeight: 10,
         formatter(name) {
           const value = data.filter(i => i.name === name)[0]?.value * 100 + '%';
           return name + ' ' + value;
@@ -40,9 +35,9 @@ export const Chart12 = () => {
       },
       series: [
         {
-          center: ['60%', '50%'],
+          center: ['66%', '50%'],
           type: 'pie',
-          radius: '80%',
+          radius: '75%',
           label: {show: false},
           labelLine: {show: false},
           data: data,
@@ -59,7 +54,7 @@ export const Chart12 = () => {
   }, []);
 
   return (
-    <div className="年龄段-图1">
+    <div className="chart12">
       <div className="chart">
         <div className="main" ref={divRef}/>
       </div>
